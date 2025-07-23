@@ -24,7 +24,18 @@ export default function HomeScreen() {
                     description="Espresso with steamed milk"
                     price="3.99"
                     image={require('../assets/images/cappuccino.png')}
-                    onAdd={() => console.log('Add to cart')}
+                />
+                <CoffeeCard
+                    name="Latte"
+                    description="Creamy espresso with milk"
+                    price="4.49"
+                    image={require('../assets/images/latte.png')}
+                />
+                <CoffeeCard
+                    name="Americano"
+                    description="Espresso with hot water"
+                    price="2.99"
+                    image={require('../assets/images/americano.png')}
                 />
 
             </ScrollView>
