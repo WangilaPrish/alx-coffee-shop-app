@@ -5,15 +5,18 @@ import {
     Image,
     TouchableOpacity,
     StyleSheet,
+    Dimensions,
 } from 'react-native';
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import { AntDesign } from '@expo/vector-icons';
+
+const { width } = Dimensions.get('window');
 
 interface CoffeeCardProps {
     name: string;
     description: string;
     price: string;
-    image: any; // require('...') or { uri }
+    image: any;
     onAdd?: () => void;
 }
 
@@ -28,50 +31,45 @@ export default function CoffeeCard({
         <View style={styles.card}>
             <Image source={image} style={styles.image} />
 
-            <View style={styles.info}>
-                <Text style={styles.name}>{name}</Text>
-                <Text style={styles.desc}>{description}</Text>
+            <Text style={styles.name}>{name}</Text>
+            <Text style={styles.desc}>{description}</Text>
 
-                <View style={styles.footer}>
-                    <Text style={styles.price}>${price}</Text>
-                    <TouchableOpacity style={styles.addButton} onPress={onAdd}>
-                        <AntDesign name="plus" size={18} color="#fff" />
-                    </TouchableOpacity>
-                </View>
+            <View style={styles.footer}>
+                <Text style={styles.price}>${price}</Text>
+                <TouchableOpacity style={styles.addButton} onPress={onAdd}>
+                    <AntDesign name="plus" size={16} color="#fff" />
+                </TouchableOpacity>
             </View>
         </View>
     );
 }
+
 const styles = StyleSheet.create({
     card: {
-        flexDirection: 'row',
         backgroundColor: '#fff',
+        width: width * 0.44,
         borderRadius: 16,
         padding: RFPercentage(2),
-        marginVertical: RFPercentage(1.5),
+        marginBottom: RFPercentage(2.5),
         shadowColor: '#000',
-        shadowOpacity: 0.1,
-        shadowRadius: 8,
-        elevation: 4,
-        alignItems: 'center',
+        shadowOpacity: 0.05,
+        shadowRadius: 6,
+        elevation: 3,
     },
     image: {
-        width: RFPercentage(10),
-        height: RFPercentage(10),
+        width: '100%',
+        height: RFPercentage(14),
         borderRadius: 12,
+        marginBottom: RFPercentage(1.5),
         resizeMode: 'cover',
-        marginRight: RFPercentage(2),
-    },
-    info: {
-        flex: 1,
     },
     name: {
-        fontSize: RFPercentage(2.3),
-        fontWeight: 'bold',
+        fontSize: RFPercentage(2.2),
+        fontWeight: '600',
         color: '#333',
     },
     desc: {
-        fontSize: RFPercentage(1.8),
+        fontSize: RFPercentage(1.7),
         color: '#777',
         marginVertical: RFPercentage(0.5),
     },
@@ -79,9 +77,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+        marginTop: RFPercentage(1),
     },
     price: {
-        fontSize: RFPercentage(2.2),
+        fontSize: RFPercentage(2),
         fontWeight: '600',
         color: '#cc7a35',
     },

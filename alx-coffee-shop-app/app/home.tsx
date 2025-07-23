@@ -18,26 +18,36 @@ export default function HomeScreen() {
                 {/* Menu Section */}
                 <Menu />
 
-                {/* You can insert CoffeeCard list here after it's built */}
-                <CoffeeCard
-                    name="Cappuccino"
-                    description="Espresso with steamed milk"
-                    price="3.99"
-                    image={require('../assets/images/cappuccino.png')}
-                />
-                <CoffeeCard
-                    name="Latte"
-                    description="Creamy espresso with milk"
-                    price="4.49"
-                    image={require('../assets/images/latte.png')}
-                />
-                <CoffeeCard
-                    name="Americano"
-                    description="Espresso with hot water"
-                    price="2.99"
-                    image={require('../assets/images/americano.png')}
-                />
+                {/* Coffee Cards Grid */}
+                <View style={styles.grid}>
+                    <CoffeeCard
+                        name="Cappuccino"
+                        description="Espresso with steamed milk"
+                        price="3.99"
+                        image={require('../assets/images/cappuccino.png')}
+                    />
 
+                    <CoffeeCard
+                        name="Latte"
+                        description="Creamy espresso with milk"
+                        price="4.49"
+                        image={require('../assets/images/latte.png')}
+                    />
+
+                    <CoffeeCard
+                        name="Mocha"
+                        description="Espresso with chocolate & milk"
+                        price="4.99"
+                        image={require('../assets/images/mocha.png')}
+                    />
+
+                    <CoffeeCard
+                        name="Americano"
+                        description="Espresso with hot water"
+                        price="2.99"
+                        image={require('../assets/images/americano.png')}
+                    />
+                </View>
             </ScrollView>
 
             {/* Bottom Navigation Bar */}
@@ -52,9 +62,14 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     contentContainer: {
-        paddingBottom: 80,
-        paddingHorizontal: 16,
         paddingTop: 20,
+        paddingBottom: 100, // allow space for BottomNav
         gap: 24,
+    },
+    grid: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+        paddingHorizontal: 16,
     },
 });
