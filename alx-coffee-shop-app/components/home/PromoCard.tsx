@@ -11,14 +11,6 @@ export default function PromoCard() {
                     source={require('../../assets/images/Banner.png')}
                     style={styles.coffeeImage}
                 />
-                <Image
-                    source={require('../../assets/images/Image.png')}
-                    style={styles.heart1}
-                />
-                <Image
-                    source={require('../../assets/images/Image.png')}
-                    style={styles.heart2}
-                />
             </View>
         </View>
     );
@@ -30,21 +22,23 @@ const styles = StyleSheet.create({
         height: RFPercentage(18),
         backgroundColor: '#A47148',
         borderRadius: 20,
-        padding: RFPercentage(2),
         position: 'relative',
         justifyContent: 'center',
+        overflow: 'hidden',
         marginTop: RFPercentage(3),
     },
     promoTag: {
         color: '#fff',
         backgroundColor: '#ddd',
-        alignSelf: 'flex-start',
-        paddingHorizontal: 10,
+        position: 'absolute',
+        top: RFPercentage(1.5),
+        paddingHorizontal: RFPercentage(2),
+        marginLeft: RFPercentage(2),
         paddingVertical: 4,
         borderRadius: 8,
         fontSize: RFPercentage(1.7),
         fontWeight: '600',
-        overflow: 'hidden',
+        zIndex: 2,
     },
     content: {
         flex: 1,
@@ -52,24 +46,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     coffeeImage: {
-        width: RFPercentage(14),
-        height: RFPercentage(14),
-        resizeMode: 'contain',
-    },
-    heart1: {
+        width: '100%',
+        height: '100%',
+        resizeMode: 'cover',
         position: 'absolute',
-        top: RFPercentage(2),
-        left: RFPercentage(2),
-        width: RFPercentage(3),
-        height: RFPercentage(3),
-        resizeMode: 'contain',
-    },
-    heart2: {
-        position: 'absolute',
-        bottom: RFPercentage(2),
-        right: RFPercentage(2),
-        width: RFPercentage(3),
-        height: RFPercentage(3),
-        resizeMode: 'contain',
+        top: 0,
+        left: 0,
     },
 });
