@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
@@ -8,7 +8,7 @@ export default function Location() {
             <Text style={styles.label}>Location</Text>
             <TouchableOpacity style={styles.locationContainer}>
                 <Text style={styles.location}>Bilzen, Tanjungbalai</Text>
-                <Feather name="chevron-down" size={18} color="#fff" style={styles.icon} />
+                <Feather name="chevron-down" size={18} color="#333" style={styles.icon} />
             </TouchableOpacity>
         </View>
     );
@@ -17,10 +17,10 @@ export default function Location() {
 const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 20,
-        marginTop: 20,
+        marginTop: 8,
     },
     label: {
-        color: '#aaa',
+        color: '#888',
         fontSize: RFPercentage(1.8),
         marginBottom: 4,
     },
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     location: {
-        color: '#fff',
+        color: '#333', // Changed from white
         fontWeight: 'bold',
         fontSize: RFPercentage(2.2),
     },
