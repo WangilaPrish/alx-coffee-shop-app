@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     ,
     promoTag: {
         color: '#fff',
-        backgroundColor: '#ddd',
+        backgroundColor: '#BBBBBB',
         position: 'absolute',
         top: RFPercentage(1.5),
         paddingHorizontal: RFPercentage(2),
