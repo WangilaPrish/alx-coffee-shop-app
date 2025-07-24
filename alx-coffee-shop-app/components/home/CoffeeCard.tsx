@@ -1,4 +1,6 @@
 import React from 'react';
+import { useRouter } from 'expo-router';
+
 import {
     View,
     Text,
@@ -9,7 +11,7 @@ import {
 } from 'react-native';
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import { AntDesign } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
+
 
 const { width } = Dimensions.get('window');
 
