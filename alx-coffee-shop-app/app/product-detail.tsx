@@ -4,10 +4,12 @@ import ProductInfo from '../components/products/ProductInfo';
 import ProductDescription from '../components/products/ProductDescription';
 import ProductSizeSelector from '../components/products/ProductSizeSelector';
 import BuyBar from '../components/products/BuyBar';
+import ProductHeader from '@/components/products/ProductHeader';
 
 export default function ProductDetailScreen() {
     return (
         <View style={styles.container}>
+            <ProductHeader />
             <ScrollView
                 contentContainerStyle={styles.content}
                 showsVerticalScrollIndicator={false}

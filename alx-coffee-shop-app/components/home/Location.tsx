@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: RFPercentage(1.3),
         height: RFPercentage(5.7),
         marginVertical: RFPercentage(6),
+        marginHorizontal: RFPercentage(2),
     },
     searchIcon: {
         marginRight: RFPercentage(1),

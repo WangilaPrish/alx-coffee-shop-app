@@ -40,7 +40,7 @@ export default function CoffeeCard({
                     <AntDesign name="plus" size={16} color="#fff" />
                 </TouchableOpacity>
             </View>
-        </View>
+        </View >
     );
 }
 
