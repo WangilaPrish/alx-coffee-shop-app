@@ -18,14 +18,20 @@ export default function PromoCard() {
 
 const styles = StyleSheet.create({
     card: {
-        width: '100%',
+        width: '85%',
         height: RFPercentage(18),
         backgroundColor: '#A47148',
         borderRadius: 20,
         position: 'relative',
         justifyContent: 'center',
         overflow: 'hidden',
-        marginTop: RFPercentage(3),
+        marginHorizontal: RFPercentage(4),
+        marginTop: RFPercentage(-3), // Move it upward to overlap
+        zIndex: 5, // Ensure it's on top
+        elevation: 5, // For Android shadow elevation
+        shadowColor: '#000', // Optional: for iOS shadow
+        shadowOpacity: 0.15,
+        shadowRadius: 6,
     },
     promoTag: {
         color: '#fff',
