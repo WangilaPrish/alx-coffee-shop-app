@@ -43,7 +43,8 @@ const styles = StyleSheet.create({
     label: {
         color: 'white',
         fontSize: RFPercentage(1.8),
-        marginTop: RFPercentage(5),
+        marginTop: RFPercentage(6),
+        marginHorizontal: RFPercentage(2),
     },
     searchWrapper: {
         flexDirection: 'row',
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#313131',
         borderRadius: 12,
         width: '90%',
-        paddingHorizontal: RFPercentage(1.6),
+        paddingHorizontal: RFPercentage(1.3),
         height: RFPercentage(5.7),
         marginVertical: RFPercentage(6),
     },
@@ -72,6 +73,7 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
         fontSize: RFPercentage(2.2),
+        marginHorizontal: RFPercentage(2),
     },
     icon: {
         marginLeft: 6,
