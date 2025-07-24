@@ -1,14 +1,15 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
-export default function ProductInfo({ product }: { product: any }) {
+export default function ProductInfo({ title, price }: { title: string; price: number }) {
     return (
-        <View style={styles.container}>
-            <Text style={styles.name}>{product.name}</Text>
-            <Text style={styles.price}>${product.price.toFixed(2)}</Text>
+        <View style={styles.info}>
+            <Text style={styles.title}>{title}</Text>
+            <Text style={styles.price}>${price.toFixed(2)}</Text>
         </View>
     );
 }
+
 
 const styles = StyleSheet.create({
     container: {

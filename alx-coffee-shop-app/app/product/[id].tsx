@@ -1,14 +1,17 @@
-import { View, ScrollView, StyleSheet } from 'react-native';
+import { View, ScrollView, StyleSheet, Text } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
-import ProductHeader from '../../components/product/ProductHeader';
-import ProductImage from '../../components/product/ProductImage';
-import ProductInfo from '../../components/product/ProductInfo';
-import ProductDescription from '../../components/product/ProductDescription';
-import ProductSizeSelector from '../../components/product/ProductSizeSelector';
-import BuyBar from '../../components/product/BuyBar';
+import ProductHeader from '../../components/products/ProductHeader';
+import ProductImage from '../../components/products/ProductImage';
+import ProductInfo from '../../components/products/ProductInfo';
+import ProductDescription from '../../components/products/ProductDescription';
+import ProductSizeSelector from '../../components/products/ProductSizeSelector';
+import BuyBar from '../../components/products/BuyBar';
 
 // Mock product database
-const PRODUCTS: Record<string, { image: any; title: string; description: string; price: number }> = {
+const PRODUCTS: Record<
+    string,
+    { image: any; title: string; description: string; price: number }
+> = {
     cappuccino: {
         image: require('../../assets/images/cappuccino.png'),
         title: 'Cappuccino',
@@ -30,17 +33,19 @@ const PRODUCTS: Record<string, { image: any; title: string; description: string;
 };
 
 export default function ProductDetailScreen() {
-    const { id } = useLocalSearchParams();
-    const product = PRODUCTS[id as string];
+    const { id } = useLocalSearchParams<{ id: string }>();
+    const product = id ? PRODUCTS[id.toLowerCase()] : null;
 
     if (!product) {
         return (
             <View style={styles.container}>
                 <ProductHeader />
                 <ScrollView contentContainerStyle={styles.content}>
-                    <ProductImage source={require('../../assets/images/default-product.png')} />
-                    <ProductInfo title="Not Found" price={0} />
-                    <ProductDescription description="Product not found." />
+                    <View style={styles.fallbackImage}>
+                        <Text style={styles.notFoundText}>Product not found.</Text>
+                    </View>
+                    <ProductInfo title="Unknown Product" price={0} />
+                    <ProductDescription description="We couldn't find the product you're looking for." />
                 </ScrollView>
             </View>
         );
@@ -67,5 +72,15 @@ const styles = StyleSheet.create({
     },
     content: {
         paddingBottom: 100,
+    },
+    fallbackImage: {
+        height: 250,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#f0f0f0',
+    },
+    notFoundText: {
+        fontSize: 16,
+        color: '#555',
     },
 });

@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import { AntDesign } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 
 const { width } = Dimensions.get('window');
 
@@ -17,6 +18,7 @@ interface CoffeeCardProps {
     description: string;
     price: string;
     image: any;
+    slug: string;
     onAdd?: () => void;
 }
 
@@ -26,21 +28,27 @@ export default function CoffeeCard({
     price,
     image,
     onAdd,
+    slug,
 }: CoffeeCardProps) {
+
+    const router = useRouter();
     return (
-        <View style={styles.card}>
-            <Image source={image} style={styles.image} />
 
-            <Text style={styles.name}>{name}</Text>
-            <Text style={styles.desc}>{description}</Text>
+        <TouchableOpacity onPress={() => router.push(`/products/${slug}`)}>
+            <View style={styles.card}>
+                <Image source={image} style={styles.image} />
 
-            <View style={styles.footer}>
-                <Text style={styles.price}>${price}</Text>
-                <TouchableOpacity onPress={() => router.push(`/product/${id}`)}>
-                    <AntDesign name="plus" size={16} color="#fff" />
-                </TouchableOpacity>
-            </View>
-        </View >
+                <Text style={styles.name}>{name}</Text>
+                <Text style={styles.desc}>{description}</Text>
+
+                <View style={styles.footer}>
+                    <Text style={styles.price}>${price}</Text>
+                    <TouchableOpacity style={styles.addButton} onPress={onAdd}>
+                        <AntDesign name="plus" size={16} color="#fff" />
+                    </TouchableOpacity>
+                </View>
+            </View >
+        </TouchableOpacity>
     );
 }
 
