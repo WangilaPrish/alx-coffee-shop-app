@@ -34,10 +34,10 @@ export default function Location() {
 const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 20,
-        marginTop: RFPercentage(6),
+
         color: '#333',
-        backgroundColor: '#fff',
-        height: RFPercentage(16),
+        backgroundColor: '#57564F',
+        height: RFPercentage(36),
     },
     label: {
         color: '#888',
