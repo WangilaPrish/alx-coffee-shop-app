@@ -36,7 +36,7 @@ export default function CoffeeCard({
 
             <View style={styles.footer}>
                 <Text style={styles.price}>${price}</Text>
-                <TouchableOpacity style={styles.addButton} onPress={onAdd}>
+                <TouchableOpacity onPress={() => router.push(`/product/${id}`)}>
                     <AntDesign name="plus" size={16} color="#fff" />
                 </TouchableOpacity>
             </View>

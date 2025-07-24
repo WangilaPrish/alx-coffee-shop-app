@@ -1,23 +1,33 @@
-import React, { useState } from 'react';
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { useState } from 'react';
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
 const sizes = ['S', 'M', 'L'];
 
 export default function ProductSizeSelector() {
-    const [selected, setSelected] = useState('M');
+    const [selectedSize, setSelectedSize] = useState('M');
 
     return (
         <View style={styles.container}>
-            <Text style={styles.label}>Size</Text>
-            <View style={styles.optionsRow}>
+            <Text style={styles.label}>Select Size</Text>
+            <View style={styles.sizeRow}>
                 {sizes.map((size) => (
                     <TouchableOpacity
                         key={size}
-                        style={[styles.option, selected === size && styles.selected]}
-                        onPress={() => setSelected(size)}
+                        style={[
+                            styles.sizeBox,
+                            selectedSize === size && styles.selected,
+                        ]}
+                        onPress={() => setSelectedSize(size)}
                     >
-                        <Text style={[styles.optionText, selected === size && styles.selectedText]}>{size}</Text>
+                        <Text
+                            style={[
+                                styles.sizeText,
+                                selectedSize === size && styles.selectedText,
+                            ]}
+                        >
+                            {size}
+                        </Text>
                     </TouchableOpacity>
                 ))}
             </View>
@@ -27,37 +37,36 @@ export default function ProductSizeSelector() {
 
 const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: RFPercentage(2),
-        marginTop: RFPercentage(2),
+        paddingHorizontal: RFPercentage(3),
+        marginTop: RFPercentage(3),
     },
     label: {
-        fontSize: RFPercentage(2),
+        fontSize: RFPercentage(2.2),
         fontWeight: '600',
+        marginBottom: RFPercentage(1.5),
         color: '#333',
-        marginBottom: RFPercentage(1.2),
     },
-    optionsRow: {
+    sizeRow: {
         flexDirection: 'row',
-        gap: RFPercentage(2),
+        justifyContent: 'space-between',
     },
-    option: {
-        paddingVertical: RFPercentage(1.3),
-        paddingHorizontal: RFPercentage(3.5),
-        backgroundColor: '#f2f2f2',
-        borderRadius: 12,
-    },
-    selected: {
-        backgroundColor: '#fff',
-        borderColor: '#cc7a35',
+    sizeBox: {
         borderWidth: 1,
+        borderColor: '#ccc',
+        paddingVertical: RFPercentage(1.2),
+        paddingHorizontal: RFPercentage(3),
+        borderRadius: 10,
     },
-    optionText: {
+    sizeText: {
         fontSize: RFPercentage(2),
         color: '#666',
-        fontWeight: '500',
+    },
+    selected: {
+        backgroundColor: '#cc7a35',
+        borderColor: '#cc7a35',
     },
     selectedText: {
-        color: '#cc7a35',
-        fontWeight: '600',
+        color: '#fff',
+        fontWeight: 'bold',
     },
 });

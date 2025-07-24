@@ -1,13 +1,10 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
-export default function BuyBar() {
+export default function BuyBar({ price }: { price: number }) {
     return (
         <View style={styles.container}>
-            <View style={styles.priceSection}>
-                <Text style={styles.label}>Price</Text>
-                <Text style={styles.price}>$ 4.53</Text>
-            </View>
+            <Text style={styles.price}>${price.toFixed(2)}</Text>
             <TouchableOpacity style={styles.button}>
                 <Text style={styles.buttonText}>Buy Now</Text>
             </TouchableOpacity>
@@ -19,33 +16,25 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center',
         padding: RFPercentage(2),
-        backgroundColor: '#fff',
-        borderTopColor: '#eee',
         borderTopWidth: 1,
-    },
-    priceSection: {
-        flex: 1,
-    },
-    label: {
-        fontSize: RFPercentage(1.6),
-        color: '#999',
+        borderColor: '#eee',
+        backgroundColor: '#fff',
     },
     price: {
-        fontSize: RFPercentage(2.4),
-        fontWeight: '700',
+        fontSize: RFPercentage(2.5),
+        fontWeight: 'bold',
         color: '#cc7a35',
     },
     button: {
         backgroundColor: '#cc7a35',
-        paddingVertical: RFPercentage(1.5),
+        paddingVertical: RFPercentage(1.4),
         paddingHorizontal: RFPercentage(4),
-        borderRadius: 12,
+        borderRadius: 10,
     },
     buttonText: {
         color: '#fff',
-        fontWeight: '600',
         fontSize: RFPercentage(2),
+        fontWeight: '600',
     },
 });
