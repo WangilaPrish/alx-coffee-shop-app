@@ -35,23 +35,24 @@ export default function Location() {
 
 const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: 20,
+        paddingHorizontal: 15,
         color: '#333',
-        backgroundColor: '#57564F',
-        height: RFPercentage(36),
+        backgroundColor: '#111111',
+        height: RFPercentage(32),
     },
     label: {
-        color: '#888',
+        color: 'white',
         fontSize: RFPercentage(1.8),
-        marginTop: RFPercentage(8),
+        marginTop: RFPercentage(5),
     },
     searchWrapper: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#f2f2f2',
+        backgroundColor: '#313131',
         borderRadius: 12,
-        width: '70%',
-        paddingHorizontal: RFPercentage(1.5),
+        width: '90%',
+        paddingHorizontal: RFPercentage(1.6),
+        height: RFPercentage(5.7),
         marginVertical: RFPercentage(6),
     },
     searchIcon: {
@@ -59,7 +60,6 @@ const styles = StyleSheet.create({
     },
     input: {
         flex: 1,
-
         fontSize: RFPercentage(2),
         paddingVertical: RFPercentage(1),
         color: '#333',
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     location: {
-        color: '#333',
+        color: 'white',
         fontWeight: 'bold',
         fontSize: RFPercentage(2.2),
     },
