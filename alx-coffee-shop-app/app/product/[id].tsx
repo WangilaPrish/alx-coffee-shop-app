@@ -10,25 +10,28 @@ import BuyBar from '../../components/products/BuyBar';
 // Mock product database
 const PRODUCTS: Record<
     string,
-    { image: any; title: string; description: string; price: number }
+    { image: any; title: string; description: string; price: number; slug: string }
 > = {
     cappuccino: {
         image: require('../../assets/images/cappuccino.png'),
         title: 'Cappuccino',
         description: 'Espresso with steamed milk foam.',
         price: 3.99,
+        slug: 'cappuccino',
     },
     latte: {
         image: require('../../assets/images/latte.png'),
         title: 'Latte',
         description: 'Smooth espresso with steamed milk.',
         price: 4.49,
+        slug: 'latte',
     },
     americano: {
         image: require('../../assets/images/americano.png'),
         title: 'Americano',
         description: 'Espresso with hot water.',
         price: 2.99,
+        slug: 'americano',
     },
 };
 
