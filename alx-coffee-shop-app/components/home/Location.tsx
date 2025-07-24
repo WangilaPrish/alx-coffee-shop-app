@@ -10,6 +10,12 @@ export default function Location() {
         <View style={styles.container}>
             <Text style={styles.label}>Delivery Location</Text>
 
+            {/* Selected Location */}
+            <TouchableOpacity style={styles.locationContainer}>
+                <Text style={styles.location}>Bilzen, Tanjungbalai</Text>
+                <Feather name="chevron-down" size={18} color="#333" style={styles.icon} />
+            </TouchableOpacity>
+
             {/* Search Input */}
             <View style={styles.searchWrapper}>
                 <Feather name="search" size={18} color="#aaa" style={styles.searchIcon} />
@@ -22,11 +28,7 @@ export default function Location() {
                 />
             </View>
 
-            {/* Selected Location */}
-            <TouchableOpacity style={styles.locationContainer}>
-                <Text style={styles.location}>Bilzen, Tanjungbalai</Text>
-                <Feather name="chevron-down" size={18} color="#333" style={styles.icon} />
-            </TouchableOpacity>
+
         </View>
     );
 }
@@ -34,7 +36,6 @@ export default function Location() {
 const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 20,
-
         color: '#333',
         backgroundColor: '#57564F',
         height: RFPercentage(36),
@@ -42,21 +43,23 @@ const styles = StyleSheet.create({
     label: {
         color: '#888',
         fontSize: RFPercentage(1.8),
-        marginBottom: RFPercentage(1),
+        marginTop: RFPercentage(8),
     },
     searchWrapper: {
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#f2f2f2',
         borderRadius: 12,
+        width: '70%',
         paddingHorizontal: RFPercentage(1.5),
-        marginBottom: RFPercentage(1.5),
+        marginVertical: RFPercentage(6),
     },
     searchIcon: {
         marginRight: RFPercentage(1),
     },
     input: {
         flex: 1,
+
         fontSize: RFPercentage(2),
         paddingVertical: RFPercentage(1),
         color: '#333',

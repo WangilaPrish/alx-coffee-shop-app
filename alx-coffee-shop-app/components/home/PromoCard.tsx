@@ -18,21 +18,22 @@ export default function PromoCard() {
 
 const styles = StyleSheet.create({
     card: {
-        width: '85%',
+        width: '90%',
         height: RFPercentage(18),
         backgroundColor: '#A47148',
         borderRadius: 20,
-        position: 'relative',
         justifyContent: 'center',
         overflow: 'hidden',
-        marginHorizontal: RFPercentage(4),
-        marginTop: RFPercentage(-3), // Move it upward to overlap
-        zIndex: 5, // Ensure it's on top
-        elevation: 5, // For Android shadow elevation
-        shadowColor: '#000', // Optional: for iOS shadow
-        shadowOpacity: 0.15,
+        marginTop: -RFPercentage(11), // 👈 pull up into the location box
+        zIndex: 10,
+        alignSelf: 'center',
+        elevation: 5,
+        shadowColor: '#000',
+        shadowOpacity: 0.1,
         shadowRadius: 6,
-    },
+    }
+
+    ,
     promoTag: {
         color: '#fff',
         backgroundColor: '#ddd',
