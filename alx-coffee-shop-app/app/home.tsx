@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     contentContainer: {
-        paddingTop: 20,
         paddingBottom: 100, // allow space for BottomNav
         gap: 24,
     },

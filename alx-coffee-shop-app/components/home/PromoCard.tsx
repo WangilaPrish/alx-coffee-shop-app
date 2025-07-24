@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         justifyContent: 'center',
         overflow: 'hidden',
-        marginTop: -RFPercentage(11), // 👈 pull up into the location box
+        marginTop: -RFPercentage(9), // 👈 pull up into the location box
         zIndex: 10,
         alignSelf: 'center',
         elevation: 5,

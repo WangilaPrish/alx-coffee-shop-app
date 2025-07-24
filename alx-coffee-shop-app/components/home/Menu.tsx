@@ -40,7 +40,7 @@ export default function Menu({ onSelectCategory }: Props) {
 const styles = StyleSheet.create({
     menuContainer: {
         paddingHorizontal: 16,
-        paddingTop: 10,
+        paddingTop: 7,
     },
     item: {
         marginRight: 10,
