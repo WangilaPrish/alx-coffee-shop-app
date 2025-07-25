@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     content: {
         paddingBottom: 20,
         paddingHorizontal: 20,
-        gap: 24, // Ensures consistent spacing between sections
+        gap: 10, // Ensures consistent spacing between sections
     },
     fallbackImage: {
         height: 220,
