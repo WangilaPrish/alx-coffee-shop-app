@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
     sizeText: {
         fontSize: RFPercentage(2),
         color: '#666',
+        textAlign: 'center',
     },
     selected: {
         backgroundColor: '#cc7a35',
