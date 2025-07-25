@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         paddingTop: 35, // Adjust for status bar height
     },
     content: {
-        paddingBottom: 120,
+        paddingBottom: 20,
         paddingHorizontal: 20,
         gap: 24, // Ensures consistent spacing between sections
     },
