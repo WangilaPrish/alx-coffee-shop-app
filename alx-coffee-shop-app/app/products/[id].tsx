@@ -71,21 +71,24 @@ export default function ProductDetailScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'white',
-        paddingTop: 46,
-        paddingHorizontal: 23,
+        backgroundColor: '#FDFDFD',
     },
     content: {
-        paddingVertical: 35,
+        paddingBottom: 120,
+        paddingHorizontal: 20,
+        gap: 24, // Ensures consistent spacing between sections
     },
     fallbackImage: {
         height: 250,
+        marginTop: 20,
+        borderRadius: 20,
+        backgroundColor: '#eee',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#f0f0f0',
     },
     notFoundText: {
-        fontSize: 16,
-        color: '#555',
+        fontSize: 18,
+        fontWeight: '500',
+        color: '#888',
     },
 });
