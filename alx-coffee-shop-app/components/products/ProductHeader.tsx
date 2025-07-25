@@ -1,11 +1,14 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { RFPercentage } from 'react-native-responsive-fontsize';
+import { useRouter } from 'expo-router';
 
 export default function ProductHeader() {
+
+    const router = useRouter();
     return (
         <View style={styles.header}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => router.push('/home')}>
                 <Ionicons name="arrow-back" size={24} color="#333" />
             </TouchableOpacity>
             <Text style={styles.title}>Detail</Text>
