@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     label: {
         fontSize: RFPercentage(2.2),
         fontWeight: '600',
-        marginBottom: RFPercentage(1.5),
+        marginBottom: RFPercentage(2.2),
         color: '#333',
     },
     sizeRow: {
@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
         paddingVertical: RFPercentage(1.2),
         paddingHorizontal: RFPercentage(3),
         borderRadius: 10,
+        width: '30%',
     },
     sizeText: {
         fontSize: RFPercentage(2),
