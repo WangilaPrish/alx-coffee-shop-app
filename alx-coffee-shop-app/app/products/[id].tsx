@@ -33,6 +33,13 @@ const PRODUCTS: Record<
         price: 2.99,
         slug: 'americano',
     },
+    mocha: {
+        image: require('../../assets/images/mocha.png'),
+        title: 'Mocha',
+        description: 'Espresso with chocolate and steamed milk.',
+        price: 4.99,
+        slug: 'mocha',
+    },
 };
 
 export default function ProductDetailScreen() {
