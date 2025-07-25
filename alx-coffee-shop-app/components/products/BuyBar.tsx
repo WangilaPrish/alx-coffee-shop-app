@@ -5,7 +5,7 @@ export default function BuyBar({ price }: { price: number }) {
     return (
         <View style={styles.container}>
             <div>
-                <Text style={styles.text}>Price</Text>
+                <Text style={styles.text}>Price: </Text>
                 <Text style={styles.price}>${price.toFixed(2)}</Text>
             </div>
 
