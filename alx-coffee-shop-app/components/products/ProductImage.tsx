@@ -9,9 +9,8 @@ export default function ProductImage({ source }: { source: any }) {
 
 const styles = StyleSheet.create({
     image: {
-        width: '100%',
-        height: RFPercentage(35),
-        borderBottomLeftRadius: 24,
-        borderBottomRightRadius: 24,
+        width: '90%',
+        height: RFPercentage(30),
+        borderRadius: RFPercentage(2),
     },
 });
