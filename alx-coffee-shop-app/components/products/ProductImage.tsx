@@ -12,5 +12,6 @@ const styles = StyleSheet.create({
         width: '100%',
         height: RFPercentage(35),
         borderRadius: RFPercentage(2),
+        marginTop: RFPercentage(2),
     },
 });
