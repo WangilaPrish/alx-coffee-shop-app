@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#FDFDFD',
+        paddingTop: 20, // Adjust for status bar height
     },
     content: {
         paddingBottom: 120,
