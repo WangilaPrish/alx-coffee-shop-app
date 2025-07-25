@@ -71,7 +71,9 @@ export default function ProductDetailScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: 'white',
+        paddingTop: 46,
+        paddingHorizontal: 16,
     },
     content: {
         paddingBottom: 100,
