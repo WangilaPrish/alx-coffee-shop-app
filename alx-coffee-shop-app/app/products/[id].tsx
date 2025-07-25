@@ -73,10 +73,10 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'white',
         paddingTop: 46,
-        paddingHorizontal: 16,
+        paddingHorizontal: 23,
     },
     content: {
-        paddingHorizontal: 24,
+
     },
     fallbackImage: {
         height: 250,
