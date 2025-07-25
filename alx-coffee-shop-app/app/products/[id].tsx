@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 16,
     },
     content: {
-
+        paddingHorizontal: 24,
     },
     fallbackImage: {
         height: 250,
