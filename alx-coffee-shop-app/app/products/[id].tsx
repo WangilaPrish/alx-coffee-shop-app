@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
         gap: 24, // Ensures consistent spacing between sections
     },
     fallbackImage: {
-        height: 250,
+        height: 220,
         marginTop: 20,
         borderRadius: 20,
         backgroundColor: '#eee',
