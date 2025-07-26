@@ -4,9 +4,12 @@ import { RFPercentage } from 'react-native-responsive-fontsize';
 
 const sizes = ['S', 'M', 'L'];
 
-export default function ProductSizeSelector() {
-    const [selectedSize, setSelectedSize] = useState('M');
+interface Props {
+    selectedSize: 'S' | 'M' | 'L';
+    setSelectedSize: (size: 'S' | 'M' | 'L') => void;
+}
 
+export default function ProductSizeSelector({ selectedSize, setSelectedSize }: Props) {
     return (
         <View style={styles.container}>
             <Text style={styles.label}>Select Size</Text>
@@ -18,7 +21,7 @@ export default function ProductSizeSelector() {
                             styles.sizeBox,
                             selectedSize === size && styles.selected,
                         ]}
-                        onPress={() => setSelectedSize(size)}
+                        onPress={() => setSelectedSize(size as 'S' | 'M' | 'L')}
                     >
                         <Text
                             style={[

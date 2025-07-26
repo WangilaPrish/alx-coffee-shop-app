@@ -1,5 +1,7 @@
 import { View, ScrollView, StyleSheet, Text } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
+import { useState } from 'react';
+
 import ProductHeader from '../../components/products/ProductHeader';
 import ProductImage from '../../components/products/ProductImage';
 import ProductInfo from '../../components/products/ProductInfo';
@@ -46,6 +48,15 @@ export default function ProductDetailScreen() {
     const { id } = useLocalSearchParams<{ id: string }>();
     const product = id ? PRODUCTS[id.toLowerCase()] : null;
 
+    const [selectedSize, setSelectedSize] = useState<'S' | 'M' | 'L'>('M');
+
+    const getAdjustedPrice = () => {
+        if (!product) return 0;
+        const base = product.price;
+        const increment = selectedSize === 'M' ? 2 : selectedSize === 'L' ? 4 : 0;
+        return parseFloat((base + increment).toFixed(2));
+    };
+
     if (!product) {
         return (
             <View style={styles.container}>
@@ -66,11 +77,11 @@ export default function ProductDetailScreen() {
             <ProductHeader />
             <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
                 <ProductImage source={product.image} />
-                <ProductInfo title={product.title} price={product.price} />
+                <ProductInfo title={product.title} price={getAdjustedPrice()} />
                 <ProductDescription description={product.description} />
-                <ProductSizeSelector />
+                <ProductSizeSelector selectedSize={selectedSize} setSelectedSize={setSelectedSize} />
             </ScrollView>
-            <BuyBar price={product.price} />
+            <BuyBar price={getAdjustedPrice()} />
         </View>
     );
 }
@@ -79,12 +90,12 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#FDFDFD',
-        paddingTop: 35, // Adjust for status bar height
+        paddingTop: 35,
     },
     content: {
-        paddingBottom: 20,
+        paddingBottom: 100,
         paddingHorizontal: 20,
-        gap: 10, // Ensures consistent spacing between sections
+        gap: 16,
     },
     fallbackImage: {
         height: 220,
