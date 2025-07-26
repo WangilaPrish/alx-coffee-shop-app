@@ -12,11 +12,12 @@ import BuyBar from '../../components/products/BuyBar';
 // Mock product database
 const PRODUCTS: Record<
     string,
-    { image: any; title: string; description: string; price: number; slug: string }
+    { image: any; title: string; description: string; price: number; slug: string, rating?: number }
 > = {
     cappuccino: {
         image: require('../../assets/images/cappuccino.png'),
         title: 'Cappuccino',
+        rating: 4.5,
         description: 'Rich espresso with steamed milk and foam. Perfect for a morning boost. ',
         price: 3.99,
         slug: 'cappuccino',
@@ -24,6 +25,7 @@ const PRODUCTS: Record<
     latte: {
         image: require('../../assets/images/latte.png'),
         title: 'Latte',
+        rating: 4.7,
         description: 'Smooth espresso with steamed milk. A classic favorite. ',
         price: 4.49,
         slug: 'latte',
@@ -31,6 +33,7 @@ const PRODUCTS: Record<
     americano: {
         image: require('../../assets/images/americano.png'),
         title: 'Americano',
+        rating: 4.2,
         description: 'Espresso with hot water. A simple yet satisfying drink.',
         price: 2.99,
         slug: 'americano',
@@ -38,6 +41,7 @@ const PRODUCTS: Record<
     mocha: {
         image: require('../../assets/images/mocha.png'),
         title: 'Mocha',
+        rating: 4.8,
         description: 'Espresso with chocolate and steamed milk.',
         price: 4.99,
         slug: 'mocha',
